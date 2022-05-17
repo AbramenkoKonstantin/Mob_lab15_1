@@ -32,13 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onLongClick(listItem: ListItem) {
-        val weatherItem: ArrayList<String> = arrayListOf (
-            "City: ${R.string.City}",
-            "Date: ${listItem.dt_txt}",
-            "Temperature: ${listItem.main.temp}"
-        )
-
-        val weather: String = "City: Shklov"
+        val weather: String =
+                "City: ${getString(R.string.City)} \n" +
+                "Date: ${listItem.dt_txt} \n" +
+                "Temperature: ${listItem.main.temp}"
 
         val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
